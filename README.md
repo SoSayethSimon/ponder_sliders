@@ -1,6 +1,7 @@
 # ponder_sliders
 
 A new Flutter project.
+A simple App idea used as an introduction to flutter and dart
 
 ## Getting Started
 
