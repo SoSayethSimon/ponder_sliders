@@ -22,30 +22,39 @@ class _AspectEntryState extends State<AspectEntry> {
       children: <Widget>[
         Container(
           padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Flexible(
-                flex: 1,
-                child: Slider(
-                  activeColor: Colors.indigoAccent,
-                  min: 0.0,
-                  max: 10.0,
-                  onChanged: (newRating) {
-                    setState(() {
-                     aspects[widget.index].rating = newRating; 
-                    });
-                  },
-                  value: aspects[widget.index].rating,
-                ),
+          child: Column(children: [
+              Row(
+                children: [
+                  Text("${aspects[widget.index].name}"),
+                  RaisedButton(child: Text("X"),)
+                ],
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
               ),
-              Container(
-                child: Text("${aspects[widget.index].rating.toInt()}"),
-                width: 50.0,
-                alignment: Alignment.center,
-              )
-            ],
-          ),
+              Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Flexible(
+                  flex: 1,
+                  child: Slider(
+                    activeColor: Colors.indigoAccent,
+                    min: 0.0,
+                    max: 10.0,
+                    onChanged: (newRating) {
+                      setState(() {
+                      aspects[widget.index].rating = newRating; 
+                      });
+                    },
+                    value: aspects[widget.index].rating,
+                  ),
+                ),
+                Container(
+                  child: Text("${aspects[widget.index].rating.toInt()}"),
+                  width: 50.0,
+                  alignment: Alignment.center,
+                )
+              ],
+            ),
+          ],)
         ),
       ],);
   }
