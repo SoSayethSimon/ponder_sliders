@@ -1,10 +1,11 @@
 import 'package:flutter/widgets.dart';
-import 'package:ponder_sliders/model/aspect_model.dart';
+import 'package:ponder_sliders/model/list_model.dart';
 import 'package:ponder_sliders/partials/aspect_entry.dart';
+import 'package:provider/provider.dart';
 
 class AspectList extends StatelessWidget {
-  final List<Aspect> aspects;
-  AspectList(this.aspects);
+
+  AspectList();
 
   @override
   Widget build(BuildContext context) {
@@ -12,10 +13,11 @@ class AspectList extends StatelessWidget {
   }
 
   ListView _buildList(context) {
+    var aspects = Provider.of<ListModel>(context);
     return ListView.builder(
-      itemCount: aspects.length,
+      itemCount: aspects.items.length,
       itemBuilder: (context, index) {
-        return AspectEntry(aspects, index);
+        return AspectEntry(index);
       }
     );
   }

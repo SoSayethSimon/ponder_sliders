@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ponder_sliders/model/aspect_model.dart';
+import 'package:ponder_sliders/model/list_model.dart';
 import 'package:ponder_sliders/partials/aspect_list.dart';
+import 'package:provider/provider.dart';
 
 class LandingPage extends StatefulWidget {
   final String title;
@@ -13,18 +15,9 @@ class LandingPage extends StatefulWidget {
 
 class _LandingPageState extends State<LandingPage> {
 
-  List<Aspect> initialAspects = []
-    ..add(Aspect('Funktionalität'))
-    ..add(Aspect('Effizienz'))
-    ..add(Aspect('Sicherheit'))
-    ..add(Aspect('Kompatibilität'))
-    ..add(Aspect('Verlässlichkeit'))
-    ..add(Aspect('Usability'))
-    ..add(Aspect('Wartung'))
-    ..add(Aspect('Portierbarkeit'));
-
   @override
   Widget build(BuildContext context) {
+    var aspects = Provider.of<ListModel>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -32,10 +25,10 @@ class _LandingPageState extends State<LandingPage> {
       ),
       body: Column(
         children: [
-          Expanded(child: Center(child: AspectList(initialAspects),),),
+          Expanded(child: Center(child: AspectList(),),),
           ButtonBar(
             children: [
-              RaisedButton(child: Text("+"), color: Colors.indigoAccent,),
+              RaisedButton(child: Text("+"), color: Colors.indigoAccent, onPressed: () => aspects.add(Aspect("Test")),),
               RaisedButton(child: Text("List"), color: Colors.indigoAccent),
               RaisedButton(child: Text("Templates"), color: Colors.indigoAccent)
             ],
