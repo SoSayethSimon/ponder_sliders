@@ -15,6 +15,35 @@ class LandingPage extends StatefulWidget {
 
 class _LandingPageState extends State<LandingPage> {
 
+  Future<String> _showAspectNameDialog() async {
+    String _aspectName = '';
+    return showDialog(
+      context: context,
+      barrierDismissible: true,
+      builder: (context) {
+        return AlertDialog(
+          title: Text("Enter the Aspects Name"),
+          content: new Row(
+            children: <Widget>[
+              new Expanded(
+                child: TextField(
+                  autofocus: true,
+                  decoration: InputDecoration(
+                    hintText: 'e.g. Performance'
+                  ),
+                  onChanged: (name) => _aspectName = name,
+                ),
+              )
+            ],
+          ),
+          actions: <Widget>[
+            FlatButton(child: Text("Add"), onPressed: () => Navigator.of(context).pop(_aspectName),)
+          ],
+        );
+      }
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     var aspects = Provider.of<ListModel>(context);
@@ -28,9 +57,12 @@ class _LandingPageState extends State<LandingPage> {
           Expanded(child: Center(child: AspectList(),),),
           ButtonBar(
             children: [
-              RaisedButton(child: Text("+"), color: Colors.indigoAccent, onPressed: () => aspects.add(Aspect("Test")),),
+              RaisedButton(child: Text("+"), color: Colors.indigoAccent, onPressed: () async {
+                String _name = await _showAspectNameDialog();
+                aspects.add(Aspect(_name));
+              },),
               RaisedButton(child: Text("List"), color: Colors.indigoAccent),
-              RaisedButton(child: Text("Templates"), color: Colors.indigoAccent)
+              RaisedButton(child: Text("Settings"), color: Colors.indigoAccent)
             ],
             alignment: MainAxisAlignment.spaceEvenly,
           )
