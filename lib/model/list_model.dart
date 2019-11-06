@@ -31,4 +31,11 @@ class ListModel extends ChangeNotifier {
     _aspects[index].rating = rating;
     notifyListeners();
   }
+
+  @override
+  String toString() {
+    var output = "";
+    items.forEach((item) => output += item.toString() + "\n");
+    return output;
+  }
 }

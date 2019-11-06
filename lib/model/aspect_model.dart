@@ -4,4 +4,9 @@ class Aspect {
   double rating = 5.0; 
 
   Aspect(this.name);
+
+  @override
+  String toString() {
+    return name + ": " + rating.toString();
+  }
 }

@@ -44,6 +44,29 @@ class _LandingPageState extends State<LandingPage> {
     );
   }
 
+  void _showListDialog() {
+    var aspects = Provider.of<ListModel>(context);
+    showDialog(
+      context: context,
+      barrierDismissible: true,
+      builder: (context) {
+        return AlertDialog(
+          title: Text("Your current values"),
+          content: new Column(
+            children: <Widget>[
+              new Expanded(
+                child: SelectableText(aspects.toString()),
+              ),
+            ],
+          ),
+          actions: <Widget>[
+            FlatButton(child: Text("Close"), onPressed: () => Navigator.of(context).pop(),)
+          ],
+        );
+      }
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     var aspects = Provider.of<ListModel>(context);
@@ -61,7 +84,7 @@ class _LandingPageState extends State<LandingPage> {
                 String _name = await _showAspectNameDialog();
                 aspects.add(Aspect(_name));
               },),
-              RaisedButton(child: Text("List"), color: Colors.indigoAccent),
+              RaisedButton(child: Text("List"), color: Colors.indigoAccent, onPressed: () => _showListDialog()),
               RaisedButton(child: Text("Settings"), color: Colors.indigoAccent)
             ],
             alignment: MainAxisAlignment.spaceEvenly,
