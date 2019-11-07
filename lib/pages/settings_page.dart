@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class SettingsPage extends StatelessWidget {
+class SettingsPage extends StatefulWidget {
+
+  @override
+  State<StatefulWidget> createState() => _SettingsState();
+
+}
+
+class _SettingsState extends State<SettingsPage> {
+
+  String _dropdownValue = "Placeholder";
 
   @override
   Widget build(BuildContext context) {
@@ -16,12 +25,17 @@ class SettingsPage extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             child: Column(children: <Widget>[
                 Row(children: [Expanded(child: DropdownButton(
-                  value: "Placeholder",
+                  value: _dropdownValue,
                   items: [
                     DropdownMenuItem(child: Text("Placeholder"), value: "Placeholder"),
                     DropdownMenuItem(child: Text("Just a test"), value: "1"),
                     DropdownMenuItem(child: Text("Second test"), value: "2"),
-                  ]
+                  ],
+                  onChanged: (String newValue) {
+                    setState(() {
+                      _dropdownValue = newValue;
+                    });
+                  },
                 ))]),
                 Row(children: [Expanded(child: RaisedButton(child: Text("Load template")))]),
               ],
