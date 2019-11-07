@@ -7,6 +7,6 @@ class Aspect {
 
   @override
   String toString() {
-    return name + ": " + rating.toString();
+    return name + ": " + rating.toInt().toString();
   }
 }
