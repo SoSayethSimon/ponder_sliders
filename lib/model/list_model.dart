@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:ponder_sliders/model/aspect_model.dart';
 
 class ListModel extends ChangeNotifier {
-  
   List<Aspect> _aspects = []
     ..add(Aspect('Funktionalität'))
     ..add(Aspect('Effizienz'))
@@ -14,7 +13,7 @@ class ListModel extends ChangeNotifier {
     ..add(Aspect('Usability'))
     ..add(Aspect('Wartung'))
     ..add(Aspect('Portierbarkeit'));
-    
+
   UnmodifiableListView get items => UnmodifiableListView(_aspects);
 
   void add(Aspect aspect) {

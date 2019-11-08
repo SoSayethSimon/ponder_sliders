@@ -4,7 +4,6 @@ import 'package:ponder_sliders/model/list_model.dart';
 import 'package:provider/provider.dart';
 
 class ListDialog extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     var aspects = Provider.of<ListModel>(context);
@@ -18,9 +17,11 @@ class ListDialog extends StatelessWidget {
         ],
       ),
       actions: <Widget>[
-        FlatButton(child: Text("Close"), onPressed: () => Navigator.of(context).pop(),)
+        FlatButton(
+          child: Text("Close"),
+          onPressed: () => Navigator.of(context).pop(),
+        )
       ],
     );
   }
-
 }

@@ -4,7 +4,6 @@ import 'package:ponder_sliders/partials/aspect_entry.dart';
 import 'package:provider/provider.dart';
 
 class AspectList extends StatelessWidget {
-
   AspectList();
 
   @override
@@ -15,10 +14,9 @@ class AspectList extends StatelessWidget {
   ListView _buildList(context) {
     var aspects = Provider.of<ListModel>(context);
     return ListView.builder(
-      itemCount: aspects.items.length,
-      itemBuilder: (context, index) {
-        return AspectEntry(index);
-      }
-    );
+        itemCount: aspects.items.length,
+        itemBuilder: (context, index) {
+          return AspectEntry(index);
+        });
   }
 }
