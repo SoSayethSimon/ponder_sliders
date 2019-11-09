@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ponder_sliders/config/AppLocalization.dart';
 import 'package:ponder_sliders/model/aspect_model.dart';
 import 'package:ponder_sliders/model/list_model.dart';
 import 'package:ponder_sliders/pages/settings_page.dart';
@@ -61,11 +62,11 @@ class _LandingPageState extends State<LandingPage> {
                   },
                 ),
                 RaisedButton(
-                    child: Text("List"),
+                    child: Text(AppLocalization.of(context).text("LIST")),
                     color: Colors.indigoAccent,
                     onPressed: () => _showListDialog()),
                 RaisedButton(
-                  child: Text("Settings"),
+                  child: Text(AppLocalization.of(context).text("SETTINGS")),
                   color: Colors.indigoAccent,
                   onPressed: () => Navigator.push(context,
                       MaterialPageRoute(builder: (context) => SettingsPage())),

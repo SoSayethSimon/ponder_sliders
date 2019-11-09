@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:ponder_sliders/config/AppLocalization.dart';
 
 class AspectDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String _aspectName = '';
     return AlertDialog(
-      title: Text("Enter the Aspects Name"),
+      title: Text(AppLocalization.of(context).text("ENTER-NAME")),
       content: new Row(
         children: <Widget>[
           new Expanded(
             child: TextField(
               autofocus: true,
-              decoration: InputDecoration(hintText: 'e.g. Performance'),
+              decoration: InputDecoration(hintText: AppLocalization.of(context).text("HINT-ADD")),
               onChanged: (name) => _aspectName = name,
             ),
           )
@@ -19,7 +20,7 @@ class AspectDialog extends StatelessWidget {
       ),
       actions: <Widget>[
         FlatButton(
-          child: Text("Add"),
+          child: Text(AppLocalization.of(context).text("ADD")),
           onPressed: () => Navigator.of(context).pop(_aspectName),
         )
       ],

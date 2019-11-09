@@ -1,3 +1,12 @@
 {
-    "LOCALE-SETTING": "Sprache"
+    "LOCALE-SETTING": "Sprache",
+    "MAX-VALUE": "Max. Wert:",
+    "LOAD-TEMPLATE": "Schema laden",
+    "SETTINGS": "Einstellungen",
+    "ENTER-NAME": "Geben Sie den Aspektnamen ein",
+    "HINT-ADD": "z.B. Performance",
+    "ADD": "Hinzufügen",
+    "CURRENT-VALUES": "Ihre aktuellen Aspektwerte",
+    "CLOSE": "Schließen",
+    "LIST": "Liste"
 }

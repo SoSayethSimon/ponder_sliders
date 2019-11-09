@@ -13,11 +13,16 @@ class _SettingsState extends State<SettingsPage> {
   Locale _localeDropdown;
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    _localeDropdown = Localizations.localeOf(context);
+    if(_localeDropdown == null) _localeDropdown = Localizations.localeOf(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text("Settings"),
+        title: Text(AppLocalization.of(context).text("SETTINGS")),
         backgroundColor: Colors.blueGrey,
       ),
       body: ListView(
@@ -44,7 +49,7 @@ class _SettingsState extends State<SettingsPage> {
                   ))
                 ]),
                 Row(children: [
-                  Expanded(child: RaisedButton(child: Text("Load template")))
+                  Expanded(child: RaisedButton(child: Text(AppLocalization.of(context).text("LOAD-TEMPLATE"))))
                 ]),
               ],
             ),
@@ -53,7 +58,7 @@ class _SettingsState extends State<SettingsPage> {
             padding: const EdgeInsets.all(32),
             child: Row(
               children: <Widget>[
-                Text("Max. Value:"),
+                Text(AppLocalization.of(context).text("MAX-VALUE")),
                 Expanded(
                     child: Padding(
                   child: TextField(
