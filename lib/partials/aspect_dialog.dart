@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ponder_sliders/config/AppLocalization.dart';
+import 'package:ponder_sliders/config/app_localization.dart';
 
 class AspectDialog extends StatelessWidget {
   @override

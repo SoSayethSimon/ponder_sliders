@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:ponder_sliders/config/AppLocalization.dart';
-import 'package:ponder_sliders/config/LocalizationChangeProvider.dart';
+import 'package:ponder_sliders/config/app_localization.dart';
+import 'package:ponder_sliders/config/localization_change_provider.dart';
+import 'package:ponder_sliders/model/list_model.dart';
+import 'package:provider/provider.dart';
 
 class SettingsPage extends StatefulWidget {
   @override
@@ -9,7 +11,7 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsState extends State<SettingsPage> {
-  String _templateDropdown = "Placeholder";
+  int _templateDropdown = 0;
   Locale _localeDropdown;
 
   @override
@@ -20,6 +22,17 @@ class _SettingsState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     if(_localeDropdown == null) _localeDropdown = Localizations.localeOf(context);
+    var aspects = Provider.of<ListModel>(context);
+    var templateButtons = <DropdownMenuItem<int>>[];
+    if(!aspects.templatesInitialized) aspects.reinitializeTemplates(context);
+    aspects.templateNames(context).asMap().forEach((index, templateName) => 
+      templateButtons.add(
+        DropdownMenuItem<int>(
+          child: Text(templateName),
+          value: index
+        )
+      )
+    );
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocalization.of(context).text("SETTINGS")),
@@ -35,13 +48,8 @@ class _SettingsState extends State<SettingsPage> {
                   Expanded(
                       child: DropdownButton(
                     value: _templateDropdown,
-                    items: [
-                      DropdownMenuItem(
-                          child: Text("Placeholder"), value: "Placeholder"),
-                      DropdownMenuItem(child: Text("Just a test"), value: "1"),
-                      DropdownMenuItem(child: Text("Second test"), value: "2"),
-                    ],
-                    onChanged: (String newValue) {
+                    items: templateButtons,
+                    onChanged: (int newValue) {
                       setState(() {
                         _templateDropdown = newValue;
                       });
@@ -49,7 +57,8 @@ class _SettingsState extends State<SettingsPage> {
                   ))
                 ]),
                 Row(children: [
-                  Expanded(child: RaisedButton(child: Text(AppLocalization.of(context).text("LOAD-TEMPLATE"))))
+                  Expanded(child: RaisedButton(child: Text(AppLocalization.of(context).text("LOAD-TEMPLATE")),
+                    onPressed: () => aspects.loadTemplate(_templateDropdown),))
                 ]),
               ],
             ),
@@ -82,6 +91,7 @@ class _SettingsState extends State<SettingsPage> {
                         setState(() {
                           localizationChangeProvider.onLocaleChanged(locale);
                           _localeDropdown = locale;
+                          aspects.reinitializeTemplates(context);
                         });
                       },
                       items: localizationChangeProvider.supportedLocales().map<DropdownMenuItem<Locale>>((locale) {

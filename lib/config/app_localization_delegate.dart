@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:ponder_sliders/config/AppLocalization.dart';
-import 'package:ponder_sliders/config/LocalizationChangeProvider.dart';
+import 'package:ponder_sliders/config/app_localization.dart';
+import 'package:ponder_sliders/config/localization_change_provider.dart';
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalization>{
   final Locale newLocale;

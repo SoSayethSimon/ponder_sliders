@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ponder_sliders/config/AppLocalization.dart';
+import 'package:ponder_sliders/config/app_localization.dart';
 import 'package:ponder_sliders/model/aspect_model.dart';
 import 'package:ponder_sliders/model/list_model.dart';
 import 'package:ponder_sliders/pages/settings_page.dart';

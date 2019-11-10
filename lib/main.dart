@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:ponder_sliders/config/AppLocalizationDelegate.dart';
-import 'package:ponder_sliders/config/LocalizationChangeProvider.dart';
+import 'package:ponder_sliders/config/app_localization_delegate.dart';
+import 'package:ponder_sliders/config/localization_change_provider.dart';
 import 'package:ponder_sliders/model/list_model.dart';
 import 'package:ponder_sliders/pages/landing_page.dart';
 import 'package:provider/provider.dart';

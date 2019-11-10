@@ -8,5 +8,15 @@
     "ADD": "Add",
     "CURRENT-VALUES": "Your current values",
     "CLOSE": "Close",
-    "LIST": "List"
+    "LIST": "List",
+    "TEMPLATE_1": "Software Quality Criteria",
+    "TEMPLATE_2": "Test Template",
+    "TEMPLATE_FUNCTIONALITY": "Functionality",
+    "TEMPLATE_EFFICIENCY": "Efficiency",
+    "TEMPLATE_SECURITY": "Security",
+    "TEMPLATE_COMPATABILITY": "Compatability",
+    "TEMPLATE_RELIABILITY": "Reliability",
+    "TEMPLATE_USABILITY": "Usability",
+    "TEMPLATE_MAINTAINABILITY": "Maintainability",
+    "TEMPLATE_PORTABILITY": "Portability"
 }

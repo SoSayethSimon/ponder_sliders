@@ -8,5 +8,15 @@
     "ADD": "Hinzufügen",
     "CURRENT-VALUES": "Ihre aktuellen Aspektwerte",
     "CLOSE": "Schließen",
-    "LIST": "Liste"
+    "LIST": "Liste",
+    "TEMPLATE_1": "Software Qualitätskriterien",
+    "TEMPLATE_2": "Test Template",
+    "TEMPLATE_FUNCTIONALITY": "Funktionalität",
+    "TEMPLATE_EFFICIENCY": "Effizienz",
+    "TEMPLATE_SECURITY": "Sicherheit",
+    "TEMPLATE_COMPATABILITY": "Kompatibilität",
+    "TEMPLATE_RELIABILITY": "Verlässlichkeit",
+    "TEMPLATE_USABILITY": "Usability",
+    "TEMPLATE_MAINTAINABILITY": "Wartbarkeit",
+    "TEMPLATE_PORTABILITY": "Portierbarkeit"
 }
