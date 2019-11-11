@@ -6,11 +6,9 @@ import 'package:ponder_sliders/model/aspect_model.dart';
 
 class ListModel extends ChangeNotifier {
 
-  bool templatesInitialized = false;
-
-  List<List<Aspect>> _templates;
+  List<List<Aspect>> _templates = [];
   
-  List<Aspect> _aspects;
+  List<Aspect> _aspects = [];
 
   List<String> templateNames(BuildContext context) {
     return []
@@ -36,14 +34,8 @@ class ListModel extends ChangeNotifier {
       );
   }
 
-  ListModel() {
-    this._templates = [];
-    this._aspects = [];
-  }
-
   void reinitializeTemplates(BuildContext context) {
     _templates = _templateDefiner(context);
-    this.templatesInitialized = true;
   }
 
   UnmodifiableListView get items => UnmodifiableListView(_aspects);

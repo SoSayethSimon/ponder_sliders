@@ -24,7 +24,7 @@ class _SettingsState extends State<SettingsPage> {
     if(_localeDropdown == null) _localeDropdown = Localizations.localeOf(context);
     var aspects = Provider.of<ListModel>(context);
     var templateButtons = <DropdownMenuItem<int>>[];
-    if(!aspects.templatesInitialized) aspects.reinitializeTemplates(context);
+    aspects.reinitializeTemplates(context); // Reinitialize with every rebuild, as locales can change the templates
     aspects.templateNames(context).asMap().forEach((index, templateName) => 
       templateButtons.add(
         DropdownMenuItem<int>(
@@ -91,7 +91,6 @@ class _SettingsState extends State<SettingsPage> {
                         setState(() {
                           localizationChangeProvider.onLocaleChanged(locale);
                           _localeDropdown = locale;
-                          aspects.reinitializeTemplates(context);
                         });
                       },
                       items: localizationChangeProvider.supportedLocales().map<DropdownMenuItem<Locale>>((locale) {

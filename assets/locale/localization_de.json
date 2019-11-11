@@ -9,6 +9,7 @@
     "CURRENT-VALUES": "Ihre aktuellen Aspektwerte",
     "CLOSE": "Schließen",
     "LIST": "Liste",
+    "EMPTY_LIST": "Um mit der Priorisierung eigener Aspekte zu beginnen, fügen Sie einfach neue Aspekte mit dem + hinzu oder laden vordefinierte Schemata aus den Einstellungen",
     "TEMPLATE_1": "Software Qualitätskriterien",
     "TEMPLATE_2": "Test Template",
     "TEMPLATE_FUNCTIONALITY": "Funktionalität",

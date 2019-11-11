@@ -9,6 +9,7 @@
     "CURRENT-VALUES": "Your current values",
     "CLOSE": "Close",
     "LIST": "List",
+    "EMPTY_LIST": "To start pondering about your priorities, simply add an entry with the + down below or load some templates from the settings section",
     "TEMPLATE_1": "Software Quality Criteria",
     "TEMPLATE_2": "Test Template",
     "TEMPLATE_FUNCTIONALITY": "Functionality",
