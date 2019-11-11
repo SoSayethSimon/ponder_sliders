@@ -6,6 +6,8 @@ import 'package:ponder_sliders/model/aspect_model.dart';
 
 class ListModel extends ChangeNotifier {
 
+  double _limit = 10;
+
   List<List<Aspect>> _templates = [];
   
   List<Aspect> _aspects = [];
@@ -38,6 +40,8 @@ class ListModel extends ChangeNotifier {
     _templates = _templateDefiner(context);
   }
 
+  double get limit => _limit;
+
   UnmodifiableListView get items => UnmodifiableListView(_aspects);
 
   void add(Aspect aspect) {
@@ -57,6 +61,12 @@ class ListModel extends ChangeNotifier {
 
   void loadTemplate(int templateIndex) {
     _aspects = []..addAll(_templates[templateIndex]);
+    notifyListeners();
+  }
+
+  void updateLimit(double newLimit) {
+    _limit = newLimit;
+    _aspects.forEach((aspect) => { if (aspect.rating > newLimit) aspect.rating = newLimit });
     notifyListeners();
   }
 

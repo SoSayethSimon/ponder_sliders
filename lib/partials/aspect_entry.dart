@@ -41,7 +41,7 @@ class _AspectEntryState extends State<AspectEntry> {
                       child: Slider(
                         activeColor: Colors.indigoAccent,
                         min: 0.0,
-                        max: 10.0,
+                        max: aspects.limit,
                         onChanged: (newRating) {
                           setState(() {
                             aspects.updateRating(widget.index, newRating);

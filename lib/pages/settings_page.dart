@@ -72,6 +72,11 @@ class _SettingsState extends State<SettingsPage> {
                     child: Padding(
                   child: TextField(
                     keyboardType: TextInputType.number,
+                    onChanged: (String input) {
+                      setState(() {
+                       aspects.updateLimit(double.parse(input).abs());
+                      });
+                    },
                   ),
                   padding: EdgeInsets.fromLTRB(32, 0, 0, 0),
                 )),
