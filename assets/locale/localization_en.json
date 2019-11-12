@@ -9,6 +9,7 @@
     "CURRENT-VALUES": "Your current values",
     "CLOSE": "Close",
     "LIST": "List",
+    "LIMIT-CHANGED": "Changed the limit of maximal values to: ",
     "EMPTY_LIST": "To start pondering about your priorities, simply add an entry with the + down below or load some templates from the settings section",
     "TEMPLATE_1": "Software Quality Criteria",
     "TEMPLATE_2": "Test Template",
