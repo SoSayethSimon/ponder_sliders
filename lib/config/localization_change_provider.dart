@@ -11,7 +11,7 @@ class LocalizationChangeProvider {
 
   static final List<String> supportedLanguages = [
     "English",
-    "German",
+    "Deutsch",
   ];
 
   static final List<String> supportedLanguagesCodes = [

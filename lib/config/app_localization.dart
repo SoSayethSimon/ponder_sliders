@@ -22,7 +22,7 @@ class AppLocalization {
     return appTranslations;
   }
 
-  get currentLanguage => _locale.languageCode;
+  get currentLanguage => _locale;
 
   String text(String key) {
     return _localisedValues[key] ?? "$key not found";

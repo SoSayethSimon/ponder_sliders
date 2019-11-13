@@ -21,7 +21,7 @@ class _SettingsState extends State<SettingsPage> {
 
   @override
   Widget build(BuildContext context) {
-    if(_localeDropdown == null) _localeDropdown = Localizations.localeOf(context);
+    if(_localeDropdown == null) _localeDropdown = AppLocalization.of(context).currentLanguage;
     var aspects = Provider.of<ListModel>(context);
     var templateButtons = <DropdownMenuItem<int>>[];
     aspects.reinitializeTemplates(context); // Reinitialize with every rebuild, as locales can change the templates
