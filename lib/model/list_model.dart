@@ -8,6 +8,8 @@ class ListModel extends ChangeNotifier {
 
   double _limit = 10;
 
+  double _sharedLimit = 8;
+
   List<List<Aspect>> _templates = [];
   
   List<Aspect> _aspects = [];
@@ -42,6 +44,8 @@ class ListModel extends ChangeNotifier {
 
   double get limit => _limit;
 
+  double get sharedLimit => _sharedLimit;
+
   UnmodifiableListView get items => UnmodifiableListView(_aspects);
 
   void add(Aspect aspect) {
@@ -66,6 +70,12 @@ class ListModel extends ChangeNotifier {
 
   void updateLimit(double newLimit) {
     _limit = newLimit;
+    _aspects.forEach((aspect) => { if (aspect.rating > newLimit) aspect.rating = newLimit });
+    notifyListeners();
+  }
+
+  void updateSharedLimit(double newLimit) {
+    _sharedLimit = newLimit;
     _aspects.forEach((aspect) => { if (aspect.rating > newLimit) aspect.rating = newLimit });
     notifyListeners();
   }

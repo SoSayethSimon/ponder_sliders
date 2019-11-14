@@ -1,6 +1,7 @@
 {
     "LOCALE-SETTING": "Sprache",
     "MAX-VALUE": "Max. Wert:",
+    "MAX-VALUE-CHANGED": "Die Wertobergrenze wurde gesetzt auf: ",
     "LOAD-TEMPLATE": "Schema laden",
     "SETTINGS": "Einstellungen",
     "ENTER-NAME": "Geben Sie den Aspektnamen ein",
@@ -9,6 +10,7 @@
     "CURRENT-VALUES": "Ihre aktuellen Aspektwerte",
     "CLOSE": "Schließen",
     "LIST": "Liste",
+    "TOTAL-LIMIT": "Geteilte Wertobergrenze (pro Eintrag):",
     "LIMIT-CHANGED": "Die Wertobergrenze wurde gesetzt auf: ",
     "EMPTY_LIST": "Um mit der Priorisierung eigener Aspekte zu beginnen, fügen Sie einfach neue Aspekte mit dem + hinzu oder laden vordefinierte Schemata aus den Einstellungen",
     "TEMPLATE_1": "Software Qualitätskriterien",

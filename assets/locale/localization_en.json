@@ -1,6 +1,7 @@
 {
     "LOCALE-SETTING": "Locale",
     "MAX-VALUE": "Max. Value:",
+    "MAX-VALUE-CHANGED": "Changed the single limit of maximal values to: ",
     "LOAD-TEMPLATE": "Load Template",
     "SETTINGS": "Settings",
     "ENTER-NAME": "Enter the aspects name",
@@ -9,6 +10,7 @@
     "CURRENT-VALUES": "Your current values",
     "CLOSE": "Close",
     "LIST": "List",
+    "TOTAL-LIMIT": "Shared Limit (per entry):",
     "LIMIT-CHANGED": "Changed the limit of maximal values to: ",
     "EMPTY_LIST": "To start pondering about your priorities, simply add an entry with the + down below or load some templates from the settings section",
     "TEMPLATE_1": "Software Quality Criteria",
